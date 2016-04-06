@@ -1,0 +1,40 @@
+.position(@type; @top: auto; @right: auto; @bottom: auto; @left: auto; @width: auto; @height: auto) {
+  position: @type;
+  top: @top;
+  right: @right;
+  bottom: @bottom;
+  left: @left;
+  width: @width;
+  height: @height;
+}
+
+
+  /* fullscreen mode */
+  &.splitscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50% !important;
+    z-index: 1050; /* bs3 modal-backdrop: 1030, bs2: 1040 */
+    .note-editable {
+      background-color: white;
+    }
+    .note-resizebar {
+      display: none;
+    }
+  }
+  
+    /* fullscreen mode */
+  &.rsplitscreen {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50% !important;
+    z-index: 1050; /* bs3 modal-backdrop: 1030, bs2: 1040 */
+    .note-editable {
+      background-color: white;
+    }
+    .note-resizebar {
+      display: none;
+    }
+  }

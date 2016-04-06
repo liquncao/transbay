@@ -1,0 +1,44 @@
+<template name="join">
+  <div class="page auth">
+
+    <div class="content-scrollable">
+      <div class="wrapper-auth">
+        <h1 class="title-auth">Join.</h1>
+        <p class="subtitle-auth" >Joining allows you to make private lists</p>
+
+        <form>
+          {{#if errorMessages}}
+            <div class="list-errors">
+              {{#each errorMessages}}
+                <div class="list-item">{{this}}</div>
+              {{/each}}
+            </div>
+          {{/if}}
+
+          <div class="input-symbol  {{errorClass 'email'}}">
+            <input type="email" name="email" placeholder="Your Email" />
+            <span class="glyphicon glyphicon-user" title="Your Username"></span>
+          </div>
+
+          <div class="input-symbol  {{errorClass 'password'}}">
+            <span class="glyphicon glyphicon-lock" title="Password"></span>
+            <input type="password" name="password" placeholder="Password" />
+            
+          </div>
+
+          <div class="input-symbol {{errorClass 'confirm'}}">
+            <span class="glyphicon glyphicon-lock" title="Confirm Password"></span>
+            <input type="password" name="confirm" placeholder="Confirm Password" />
+
+          </div>
+
+          <button type="submit" class="authbtn">Join Now</button>
+        </form>
+      </div>
+
+      <a href="{{pathFor 'signin'}}" class="link-auth-alt">Have an account? Sign in</a>
+      <div class = "wrapper-auth"></div>
+      
+    </div>
+  </div>
+</template>

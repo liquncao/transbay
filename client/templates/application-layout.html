@@ -1,0 +1,21 @@
+<template name="applicationLayout">
+
+  <head>
+    <title>Transbay</title>
+  </head>
+ 
+  {{> yield 'navbar'}}
+  <div id="wrapper">
+  {{> yield 'sidebar'}}  
+  {{> yield 'main'}}
+  </div>
+  {{#unless connected}}
+      <div class="notification">
+        <span class="icon-sync"></span>
+        <div class="meta">
+          <div class="title-notification">Trying to connect</div>
+          <div class="description">There seems to be a connection issue</div>
+        </div>
+      </div>
+  {{/unless}}
+</template>

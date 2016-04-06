@@ -1,0 +1,41 @@
+<template name='chapterItem'>
+  <div class="container top-margin">
+    <!-- display document's title -->
+    <div class="row">
+      <div class="col-md-12">
+        {{> chaptermeta}}
+      </div>
+    </div>
+
+    <!-- display users who's edited the document -->
+    <div class="row">
+      <div class="col-md-12">
+        {{> editingUsers}}
+      </div>
+    <div class="navbar navbar-right">
+    <a href="#"  id="js-workingmode" class="navbar-text" > <span class="glyphicon glyphicon-fullscreen"></span> Working Mode</a>
+    </div>
+    </div>
+
+    <div class="row">
+     <!-- display viewer -->
+      <div class="col-md-6" id="js-viewerPane">
+        {{> viewer}}
+      </div>
+     
+   
+      <!-- display editor -->
+      <div class="col-md-6" id="js-editorPane">
+
+        {{> editor}}
+      </div>
+    </div>
+    <button id="js-update-translation" class="authbtn">Save Changes</button>
+    <div class="row">
+      {{> commentList}}
+      {{> insertCommentForm}}
+    </div>
+
+
+  </div> <!-- end of docItem container -->
+</template>

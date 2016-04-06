@@ -1,0 +1,14 @@
+<template name="chaptermeta">
+  {{#with chapter}}
+  <!-- babrahams:editable-text -->
+  <span class="h3">{{> editableText collection="chapters" field="title"}}</span>
+  {{#if canEdit}}
+  <!-- private checkbox can be toggled only by user who created the document -->
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" class="js-toggle-private" {{checked}}>Private
+    </label>
+  </div>
+  {{/if}}
+  {{/with}}
+</template>

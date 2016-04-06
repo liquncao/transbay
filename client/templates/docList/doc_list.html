@@ -1,0 +1,39 @@
+<template name="docList">
+  <div class="container top-margin">
+    <div class='row'>
+      {{#if isAnyDocument}}
+        {{#each documents}}
+        <div class="col-sm-6 col-md-4 ">
+        	<div  class ="card">
+			   <div class="card-header">
+			    <h6>Created on: <em>{{createdAtFormatted}}</em></h6>
+			  </div>
+        	  <div class = "card-block">
+        		<h3 class ="card-title editable-text-trigger">
+        		{{> editableText collection="documents" field="title"}}
+        		</h3>
+        		<p class="card-text">
+	       	    <h5>
+	            {{#if isPrivate}}
+	              <strong>Private</strong>
+	            {{else}}
+	              Public
+	            {{/if}}
+	            </h5>	            
+	            </p>
+    		      <a href='/documents/{{_id}}' class="btn btn-primary btn-hover">
+		            View More Details
+		          </a>
+        	   </div>
+        	</div>
+        </div>
+        {{/each}}
+      {{else}}
+      <h2>No documents to show</h2>
+      <h3>Click to 
+        <a href="#" class="js-add-doc">Create one</a>
+      </h3>
+      {{/if}}
+    </div>
+  </div>
+</template>

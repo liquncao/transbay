@@ -1,0 +1,14 @@
+<template name="docMeta">
+  {{#with document}}
+  <!-- babrahams:editable-text -->
+  <span class="h3">{{> editableText collection="documents" field="title"}}</span>
+  {{#if canEdit}}
+  <!-- private checkbox can be toggled only by user who created the document -->
+  <div class="checkbox">
+    <label class="nav-item">
+      <input type="checkbox" class="js-toggle-private" {{checked}} >   Private
+    </label>
+  </div>
+  {{/if}}
+  {{/with}}
+</template>

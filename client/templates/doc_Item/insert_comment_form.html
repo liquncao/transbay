@@ -1,0 +1,19 @@
+<template name="insertCommentForm">
+    {{#autoForm collection="Comments" id="insertCommentForm" type="method" meteormethod="addComment"}}
+    <fieldset>
+      <legend>Add a Comment</legend>
+      {{> afQuickField name='title'}}
+      {{> afQuickField name='body' rows=6 placeholder="Write your comment here"}}
+      {{> afQuickField name='docid' value=docid type="hidden"}}
+      {{> afQuickField name='owner' value=123 type="hidden"}}
+
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Insert</button>
+  {{/autoForm}}
+</template>
+
+
+<!-- <template name="insertCommentForm">
+  {{> quickForm collection="Comments" id="insertCommetnForm" type="method"
+    meteormethod="addComment"}}
+</template> -->

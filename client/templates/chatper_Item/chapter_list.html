@@ -1,0 +1,37 @@
+<template name='chapterList'>
+    
+    <div class='container jumbotron  page list pusher'>	 
+      {{#if isAnyChapters}}
+        {{#each chapters }}
+       
+        <div class="col-sm-4 col-md-4">
+        <div class = "card">
+          <div class = "card-block" >
+          <div class = "input-group card-title">
+    		<h4> 
+    		{{> editableText collection="chapters" field="title" placeholder="Post title" substitute='<span class="glyphicon glyphicon-pencil"></span>'}}
+    		</h4>
+    	   <span  class ="input-group-btn">	 
+			 <button class="glyphicon glyphicon-trash">Delete Here</button>
+  		   </span>
+  		   </div>
+  		   <a href='/chapters/{{_id}}'>
+  		  <div class="card-text">
+    		<h5>Created on: <em>{{createdAtFormatted}}</em></h5>
+  		  </div>
+  		   </a>
+  		  
+        </div>
+        </div>
+       </div>
+        {{/each}}
+      {{else}}
+      <h4>No chapters to show</h4>
+      {{/if}}
+
+    <div class="col-md-6">
+       <button class = "js-add-chapter btn btn-danger"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Create one chapter</button>
+    </div>
+
+  </div>
+</template>
